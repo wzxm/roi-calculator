@@ -23,8 +23,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    'https://www.googletagmanager.com/gtag/js?id=G-W4ZCR3TR6J',
     '~/plugins/axios',
-    '~/plugins/filters.js'
+    '~/plugins/filters.js',
+    '~/plugins/analytice.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
