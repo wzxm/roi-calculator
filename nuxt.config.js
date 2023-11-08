@@ -15,6 +15,9 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
+    script: [
+      { src: 'https://www.googletagmanager.com/gtag/js?id=G-W4ZCR3TR6J', async: true}
+    ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
@@ -23,10 +26,9 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    'https://www.googletagmanager.com/gtag/js?id=G-W4ZCR3TR6J',
     '~/plugins/axios',
     '~/plugins/filters.js',
-    '~/plugins/analytice.js',
+    { src: '~/plugins/analytics.js', ssr: false }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -48,10 +50,10 @@ export default {
 
   build: {},
 
-  proxy: {
-    '/api/': {
-      target: process.env.DEV_URL,
-      pathRewrite: { '^/api/': '/' }
-    },
-  },
+  // proxy: {
+  //   '/api/': {
+  //     target: process.env.DEV_URL,
+  //     pathRewrite: { '^/api/': '/' }
+  //   },
+  // },
 }
